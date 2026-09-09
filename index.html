@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lex&Associés — Cabinet d'Avocats d'Affaires & Conseil</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Playfair Display pour l'institutionnel + Plus Jakarta Sans pour la lisibilité) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        law: {
+                            navy: '#0f172a',      // Bleu institutionnel profond
+                            slate: '#1e293b',     // Gris ardoise élégant
+                            gold: '#b49157',      // Or discret / Cuivre
+                            goldHover: '#9a7a44',
+                            light: '#f8fafc',     // Fond institutionnel très clair
+                            muted: '#64748b'      // Gris texte secondaire
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-law-light text-law-navy antialiased font-sans selection:bg-law-navy selection:text-white">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#accueil" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-law-navy text-law-gold flex items-center justify-center rounded font-serif font-bold text-xl">L</div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-lg font-bold tracking-wider text-law-navy">LEX & ASSOCIÉS</span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-law-muted font-sans font-semibold">Avocats à la Cour</span>
+                </div>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-law-slate">
+                <a href="#accueil" class="hover:text-law-gold transition-colors">Accueil</a>
+                <a href="#cabinet" class="hover:text-law-gold transition-colors">Cabinet</a>
+                <a href="#expertises" class="hover:text-law-gold transition-colors">Expertises</a>
+                <a href="#equipe" class="hover:text-law-gold transition-colors">Équipe</a>
+                <a href="#actualites" class="hover:text-law-gold transition-colors">Actualités</a>
+                <a href="#contact" class="hover:text-law-gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- Bouton CTA -->
+            <div class="hidden lg:flex items-center">
+                <a href="#contact" class="bg-law-navy hover:bg-law-slate text-white px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest transition-all shadow-sm">
+                    Prendre contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden text-law-navy p-2 focus:outline-none" aria-label="Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-200 shadow-xl py-8 px-8">
+            <nav class="flex flex-col gap-6 text-xs font-semibold uppercase tracking-widest text-law-navy text-center">
+                <a href="#accueil" onclick="toggleMobileMenu()" class="hover:text-law-gold">Accueil</a>
+                <a href="#cabinet" onclick="toggleMobileMenu()" class="hover:text-law-gold">Cabinet</a>
+                <a href="#expertises" onclick="toggleMobileMenu()" class="hover:text-law-gold">Expertises</a>
+                <a href="#equipe" onclick="toggleMobileMenu()" class="hover:text-law-gold">Équipe</a>
+                <a href="#actualites" onclick="toggleMobileMenu()" class="hover:text-law-gold">Actualités</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-law-gold">Contact</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="bg-law-navy text-white py-3 rounded-lg text-xs font-semibold uppercase tracking-widest mt-2">Prendre contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="accueil" class="relative min-h-[90vh] flex items-center pt-28 pb-16 bg-law-navy text-white overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-25">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1920" alt="Cabinet d'avocats" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-law-navy via-law-navy/90 to-transparent"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <span class="text-law-gold text-xs font-semibold tracking-[0.3em] uppercase block">Excellence & Rigueur Juridique</span>
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                        Défendre vos intérêts avec exigence et stratégie.
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg font-light max-w-2xl leading-relaxed">
+                        Fondé sur des valeurs d'intégrité, d'écoute et d'excellence, le cabinet Lex & Associés accompagne les entreprises et les particuliers dans leurs enjeux juridiques les plus complexes, en conseil comme en contentieux.
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-law-gold hover:bg-law-goldHover text-law-navy font-semibold px-8 py-4 rounded-lg text-xs uppercase tracking-widest transition-all shadow-md">
+                            Prendre contact
+                        </a>
+                        <a href="#expertises" class="border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-lg text-xs uppercase tracking-widest transition-all">
+                            Nos expertises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHIFFRES CLÉS -->
+        <section class="bg-white border-b border-gray-200 py-12">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1 border-r border-gray-100 last:border-0">
+                    <span class="font-serif text-4xl font-bold text-law-navy block">25+</span>
+                    <span class="text-xs uppercase tracking-widest text-law-muted font-medium">Années d'expérience</span>
+                </div>
+                <div class="space-y-1 border-r border-gray-100 last:border-0">
+                    <span class="font-serif text-4xl font-bold text-law-navy block">1 200+</span>
+                    <span class="text-xs uppercase tracking-widest text-law-muted font-medium">Dossiers traités</span>
+                </div>
+                <div class="space-y-1 border-r border-gray-100 last:border-0">
+                    <span class="font-serif text-4xl font-bold text-law-navy block">12</span>
+                    <span class="text-xs uppercase tracking-widest text-law-muted font-medium">Avocats spécialisés</span>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-serif text-4xl font-bold text-law-navy block">98%</span>
+                    <span class="text-xs uppercase tracking-widest text-law-muted font-medium">Taux de satisfaction</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- À PROPOS DU CABINET -->
+        <section id="cabinet" class="py-28 bg-law-light">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-law-gold text-xs font-semibold tracking-[0.25em] uppercase block">Notre Philosophie</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-law-navy leading-snug">
+                        Un accompagnement sur-mesure fondé sur la confiance mutuelle
+                    </h2>
+                    <p class="text-law-muted text-sm leading-relaxed">
+                        Le cabinet Lex & Associés intervient auprès d'une clientèle diversifiée composée de PME, de grands groupes, d'institutions et de particuliers. Notre approche combine une parfaite maîtrise technique du droit et une vision stratégique des affaires de nos clients.
+                    </p>
+                    <p class="text-law-muted text-sm leading-relaxed">
+                        Chaque dossier fait l'objet d'une analyse rigoureuse afin d'identifier les solutions les plus pérennes, qu'il s'agisse de négociation amiable ou de représentation devant les juridictions compétentes.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-law-gold mt-1"></i>
+                            <span class="text-xs font-semibold text-law-navy">Disponibilité & Réactivité</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-law-gold mt-1"></i>
+                            <span class="text-xs font-semibold text-law-navy">Confidentialité absolue</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-law-gold mt-1"></i>
+                            <span class="text-xs font-semibold text-law-navy">Stratégie sur-mesure</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-law-gold mt-1"></i>
+                            <span class="text-xs font-semibold text-law-navy">Transparence des honoraires</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 relative">
+                    <div class="relative h-[480px] rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Bureau du cabinet" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOMAINES D'EXPERTISE -->
+        <section id="expertises" class="py-28 bg-white border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                    <span class="text-law-gold text-xs font-semibold tracking-[0.25em] uppercase block">Compétences</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-law-navy">Nos Domaines d'Expertise</h2>
+                    <p class="text-law-muted text-sm font-light">Une palette complète de compétences juridiques pour répondre à l'ensemble de vos besoins.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Droit des affaires -->
+                    <div class="bg-law-light p-8 rounded-2xl border border-gray-200 hover:border-law-gold transition-all duration-300 space-y-4 group">
+                        <div class="w-12 h-12 bg-law-navy text-law-gold rounded-xl flex items-center justify-center text-xl group-hover:bg-law-gold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-law-navy">Droit des Affaires</h3>
+                        <p class="text-law-muted text-xs leading-relaxed font-light">Création d'entreprise, fusions-acquisitions, contentieux commercial et rédaction de contrats complexes.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-law-navy hover:text-law-gold pt-2">
+                            En savoir plus <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Droit immobilier -->
+                    <div class="bg-law-light p-8 rounded-2xl border border-gray-200 hover:border-law-gold transition-all duration-300 space-y-4 group">
+                        <div class="w-12 h-12 bg-law-navy text-law-gold rounded-xl flex items-center justify-center text-xl group-hover:bg-law-gold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-law-navy">Droit Immobilier</h3>
+                        <p class="text-law-muted text-xs leading-relaxed font-light">Transactions, baux commerciaux et d'habitation, copropriété et contentieux de la construction.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-law-navy hover:text-law-gold pt-2">
+                            En savoir plus <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Droit du travail -->
+                    <div class="bg-law-light p-8 rounded-2xl border border-gray-200 hover:border-law-gold transition-all duration-300 space-y-4 group">
+                        <div class="w-12 h-12 bg-law-navy text-law-gold rounded-xl flex items-center justify-center text-xl group-hover:bg-law-gold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-law-navy">Droit du Travail</h3>
+                        <p class="text-law-muted text-xs leading-relaxed font-light">Relations individuelles et collectives, procédures de licenciement, négociations et prud'hommes.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-law-navy hover:text-law-gold pt-2">
+                            En savoir plus <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Droit familial -->
+                    <div class="bg-law-light p-8 rounded-2xl border border-gray-200 hover:border-law-gold transition-all duration-300 space-y-4 group">
+                        <div class="w-12 h-12 bg-law-navy text-law-gold rounded-xl flex items-center justify-center text-xl group-hover:bg-law-gold group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-law-navy">Droit Familial</h3>
+                        <p class="text-law-muted text-xs leading-relaxed font-light">Divorces, successions, régimes matrimoniaux et protection des personnes vulnérables.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-law-navy hover:text-law-gold pt-2">
+                            En savoir plus <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉQUIPE D'AVOCATS -->
+        <section id="equipe" class="py-28 bg-law-light">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                    <span class="text-law-gold text-xs font-semibold tracking-[0.25em] uppercase block">Les Associés & Collaborateurs</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-law-navy">Notre Équipe d'Avocats</h2>
+                    <p class="text-law-muted text-sm font-light">Des professionnels passionnés, inscrits aux barreaux et experts dans leurs spécialités.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Avocat 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+                        <div class="h-80 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="Maître Jean-Marc Leroy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8 space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-law-gold">Associé Fondateur</span>
+                            <h3 class="font-serif text-2xl font-bold text-law-navy">Maître Jean-Marc Leroy</h3>
+                            <p class="text-law-muted text-xs leading-relaxed font-light">Spécialiste en Droit des Affaires et Contentieux Stratégique.</p>
+                            <div class="pt-2 flex items-center gap-4 text-law-navy text-sm">
+                                <a href="#" class="hover:text-law-gold"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-law-gold"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Avocat 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+                        <div class="h-80 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Maître Hélène Vasseur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8 space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-law-gold">Avocate Associée</span>
+                            <h3 class="font-serif text-2xl font-bold text-law-navy">Maître Hélène Vasseur</h3>
+                            <p class="text-law-muted text-xs leading-relaxed font-light">Experte en Droit Immobilier et Urbanisme.</p>
+                            <div class="pt-2 flex items-center gap-4 text-law-navy text-sm">
+                                <a href="#" class="hover:text-law-gold"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-law-gold"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Avocat 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+                        <div class="h-80 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" alt="Maître Thomas Delacroix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8 space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-law-gold">Avocat Associé</span>
+                            <h3 class="font-serif text-2xl font-bold text-law-navy">Maître Thomas Delacroix</h3>
+                            <p class="text-law-muted text-xs leading-relaxed font-light">Conseil en Droit du Travail et Relations Sociales.</p>
+                            <div class="pt-2 flex items-center gap-4 text-law-navy text-sm">
+                                <a href="#" class="hover:text-law-gold"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-law-gold"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTUALITÉS -->
+        <section id="actualites" class="py-28 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div class="space-y-3">
+                        <span class="text-law-gold text-xs font-semibold tracking-[0.25em] uppercase block">Veille Juridique</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-law-navy">Actualités & Publications</h2>
+                    </div>
+                    <a href="#contact" class="text-xs font-semibold uppercase tracking-widest text-law-navy hover:text-law-gold mt-4 md:mt-0">Toutes les publications <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article class="space-y-4 group cursor-pointer">
+                        <div class="h-56 rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600" alt="Actualité 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-law-muted block">12 Juin 2026 — Droit des Affaires</span>
+                        <h3 class="font-serif text-xl font-bold text-law-navy group-hover:text-law-gold transition-colors">Réforme des baux commerciaux : ce qui change pour les entreprises</h3>
+                        <p class="text-law-muted text-xs font-light leading-relaxed">Analyse des nouvelles dispositions légales régissant le renouvellement des baux professionnels.</p>
+                    </article>
+
+                    <article class="space-y-4 group cursor-pointer">
+                        <div class="h-56 rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600" alt="Actualité 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-law-muted block">28 Mai 2026 — Droit du Travail</span>
+                        <h3 class="font-serif text-xl font-bold text-law-navy group-hover:text-law-gold transition-colors">Télétravail et obligation de sécurité de l'employeur</h3>
+                        <p class="text-law-muted text-xs font-light leading-relaxed">Jurisprudence récente et recommandations pratiques pour sécuriser les contrats en mode hybride.</p>
+                    </article>
+
+                    <article class="space-y-4 group cursor-pointer">
+                        <div class="h-56 rounded-xl overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600" alt="Actualité 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-law-muted block">15 Mai 2026 — Immobilier</span>
+                        <h3 class="font-serif text-xl font-bold text-law-navy group-hover:text-law-gold transition-colors">Investissement locatif : sécuriser ses garanties juridiques</h3>
+                        <p class="text-law-muted text-xs font-light leading-relaxed">Les clauses essentielles à insérer pour prévenir les impayés et litiges de copropriété.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTIONS FRÉQUENTES (FAQ) -->
+        <section class="py-28 bg-law-light border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="text-law-gold text-xs font-semibold tracking-[0.25em] uppercase block">Informations utiles</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-law-navy">Questions Fréquentes</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group">
+                        <summary class="font-serif font-bold text-lg text-law-navy cursor-pointer flex justify-between items-center">
+                            Comment se déroule la première consultation au cabinet ?
+                            <i class="fa-solid fa-chevron-down text-xs text-law-muted group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-law-muted text-xs font-light leading-relaxed pt-4 mt-2 border-t border-gray-100">
+                            La première consultation permet d'exposer votre situation en toute confidentialité. Nous analysons les pièces de votre dossier, identifions les enjeux juridiques et vous exposons clairement les options stratégiques ainsi que notre convention d'honoraires.
+                        </p>
+                    </details>
+
+                    <details class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group">
+                        <summary class="font-serif font-bold text-lg text-law-navy cursor-pointer flex justify-between items-center">
+                            Quels sont vos modes de calcul des honoraires ?
+                            <i class="fa-solid fa-chevron-down text-xs text-law-muted group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-law-muted text-xs font-light leading-relaxed pt-4 mt-2 border-t border-gray-100">
+                            Nos honoraires sont fixés en toute transparence, soit sous forme de forfait pour les procédures prévisibles, soit au taux horaire selon la complexité du dossier. Un honoraire de résultat complémentaire peut également être convenu d'un commun accord.
+                        </p>
+                    </details>
+
+                    <details class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group">
+                        <summary class="font-serif font-bold text-lg text-law-navy cursor-pointer flex justify-between items-center">
+                            Intervenez-vous en urgence pour des contentieux ?
+                            <i class="fa-solid fa-chevron-down text-xs text-law-muted group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-law-muted text-xs font-light leading-relaxed pt-4 mt-2 border-t border-gray-100">
+                            Oui, notre équipe est structurée pour traiter les urgences juridiques (référés, perquisitions, mesures conservatoires, contentieux prud'hommaux urgents) avec une réactivité immédiate.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-28 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Infos contact -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-3">
+                        <span class="text-law-gold text-xs font-semibold tracking-[0.25em] uppercase block">Parlons de votre dossier</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-law-navy">Contactez le cabinet</h2>
+                        <p class="text-law-muted text-sm font-light">Nos équipes vous accueillent sur rendez-vous du lundi au vendredi.</p>
+                    </div>
+
+                    <div class="space-y-4 text-xs text-law-muted">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-law-gold text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-law-navy block font-semibold mb-0.5">Adresse principale</strong>
+                                <span>42 Avenue George V, 75008 Paris, France</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone text-law-gold text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-law-navy block font-semibold mb-0.5">Téléphone</strong>
+                                <span>+33 (0)1 40 00 00 00</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-envelope text-law-gold text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-law-navy block font-semibold mb-0.5">Email</strong>
+                                <span>contact@lex-associes.avocat.fr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="lg:col-span-7 bg-law-light p-10 rounded-2xl border border-gray-200 shadow-sm">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-xs uppercase tracking-wider font-semibold text-law-navy">Nom / Prénom</label>
+                                <input type="text" placeholder="Votre nom complet" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-xs text-law-navy focus:outline-none focus:border-law-navy">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-xs uppercase tracking-wider font-semibold text-law-navy">Adresse Email</label>
+                                <input type="email" placeholder="votre@email.com" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-xs text-law-navy focus:outline-none focus:border-law-navy">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-xs uppercase tracking-wider font-semibold text-law-navy">Téléphone</label>
+                                <input type="tel" placeholder="+33 6 00 00 00 00" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-xs text-law-navy focus:outline-none focus:border-law-navy">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-xs uppercase tracking-wider font-semibold text-law-navy">Domaine concerné</label>
+                                <select class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-xs text-law-navy focus:outline-none focus:border-law-navy cursor-pointer">
+                                    <option>Droit des affaires</option>
+                                    <option>Droit immobilier</option>
+                                    <option>Droit du travail</option>
+                                    <option>Droit familial</option>
+                                    <option>Autre demande</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-law-navy">Votre message</label>
+                            <textarea rows="4" placeholder="Décrivez brièvement votre situation..." class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-xs text-law-navy focus:outline-none focus:border-law-navy"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-law-navy hover:bg-law-slate text-white font-semibold py-4 rounded-lg text-xs uppercase tracking-widest transition-all shadow-sm">
+                            Envoyer la demande de consultation
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-law-navy text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+            <div>
+                <span class="font-serif text-lg tracking-wider text-white block">LEX & ASSOCIÉS</span>
+                <span class="text-[9px] text-law-gold tracking-[0.25em] uppercase block mt-1">Cabinet d'Avocats</span>
+            </div>
+            <p class="text-xs text-gray-500">© 2026 Lex & Associés. Tous droits réservés. Ordre des Avocats du Barreau de Paris.</p>
+            <div class="flex items-center justify-center md:justify-end gap-6 text-xs">
+                <a href="#" class="hover:text-law-gold transition-colors">Mentions légales</a>
+                <a href="#" class="hover:text-law-gold transition-colors">Confidentialité</a>
+                <a href="#" class="hover:text-law-gold transition-colors">Déontologie</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVITÉ JAVASCRIPT -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        menuBtn.addEventListener('click', toggleMobileMenu);
+    </script>
+</body>
+</html>
